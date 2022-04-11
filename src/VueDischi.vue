@@ -1,30 +1,28 @@
 <template>
   <div id="app">
     <LogoSpotify />
-    <img alt="Vue logo" src="./assets/logo.png" />
+    <MainSpotify :url="apiUrl" />
   </div>
 </template>
 
 <script>
 import LogoSpotify from "./components/LogoSpotify.vue";
+import MainSpotify from "./components/MainSpotify.vue";
 
 export default {
   name: "App",
   components: {
     LogoSpotify,
+    MainSpotify,
+  },
+  data() {
+    return {
+      apiUrl: "https://flynn.boolean.careers/exercises/api/array/music",
+    };
   },
 };
 </script>
 
 <style lang="scss">
-@import "@/style/variables";
-
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import "@/style/root";
 </style>
